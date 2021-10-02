@@ -45,10 +45,24 @@ const editDetails  = asyncErrorWrapper(async(req, res, next) =>{
 
 });
 
+const deleteUser =  asyncErrorWrapper(async(req, res, next) =>{
+    const{id} = req.params;
+    const user = await User.findById(id);
+    await user.remove();
+
+    return res.status(200)
+    .json({
+        succes: true,
+        message: "Delete Operation Succesful"
+    }); 
+
+});
+
 
 module.exports = {
     getSingleUser,
     getAllUsers,
-    editDetails
+    editDetails,
+    deleteUser
     
 };  
