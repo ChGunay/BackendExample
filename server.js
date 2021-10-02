@@ -3,6 +3,7 @@ const app = express();
 const dotenv = require("dotenv"); //config.env dosyasına ulaşabilmek için dotenv import edildi
 const connectDatabase = require("./helpers/database/connectDatabase");
 const routers = require("./routers/index.js")
+const customErrorHandler = require("./middlewares/errors/customErrorHandler")
 
 //Environment Variables
 
@@ -16,6 +17,9 @@ connectDatabase();
 const PORT =  process.env.PORT
 
 app.use("/api", routers)
+
+//Error Handler
+app.use(customErrorHandler);
 
 app.get("/api", (req,res) =>{
 
