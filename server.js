@@ -1,5 +1,5 @@
 const express = require("express");
-const app = express();
+
 const dotenv = require("dotenv"); //config.env dosyasına ulaşabilmek için dotenv import edildi
 const connectDatabase = require("./helpers/database/connectDatabase");
 const routers = require("./routers/index.js")
@@ -13,10 +13,13 @@ dotenv.config({
 
 //MongoDB connection
 connectDatabase();
+const app = express();
 
+//Express - Body  Middleware
+app.use(express.json());
 const PORT =  process.env.PORT
 
-app.use("/api", routers)
+app.use("/api", routers) 
 
 //Error Handler
 app.use(customErrorHandler);
