@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const dotenv = require("dotenv"); //config.env dosyasına ulaşabilmek için dotenv import edildi
+const connectDatabase = require("./helpers/database/connectDatabase");
 const routers = require("./routers/index.js")
 
 //Environment Variables
@@ -8,6 +9,9 @@ const routers = require("./routers/index.js")
 dotenv.config({
     path: "./config/env/config.env"
 });
+
+//MongoDB connection
+connectDatabase();
 
 const PORT =  process.env.PORT
 
