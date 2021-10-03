@@ -11,6 +11,6 @@ The project uses the MongoDB Atlas database.
 # Install and Running
 
 To connect to the database, MongoDb atlas cluster address must be entered in the mongoose.connect statement created in the connectDatabase file and the user information created in the cluster must be added to the address.
-The npm run dev command is sufficient for the project to run.
+The ```npm run dev``` command is sufficient for the project to run.
 
 
