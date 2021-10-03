@@ -14,3 +14,11 @@ To connect to the database, MongoDb atlas cluster address must be entered in the
 The ```npm run dev``` command is sufficient for the project to run.
 
 
+# Crud
+
+In the pastman interface for crud operations:
+1. To update the user id entered: localhost: 5000/api/users/edit/61587b5af7fbc7996418ccea
+2. To delete the user whose id is entered: localhost:5000/api/users/delete/6158792aec600c43d600d453
+3. To display the user whose id is entered: localhost:5000/api/users/6158792aec600c43d600d453
+To add new users: localhost:5000/api/auth/register
+
